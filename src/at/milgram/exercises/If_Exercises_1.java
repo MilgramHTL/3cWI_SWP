@@ -2,7 +2,7 @@ package at.milgram.exercises;
 
 import java.util.Random;
 
-public class Exercise_1 {
+public class ControlStructurs3 {
     public static void main(String[] args) {
         // Erstelle eine Zufallszahl zwischen 0 und 100
         Random random = new Random();
