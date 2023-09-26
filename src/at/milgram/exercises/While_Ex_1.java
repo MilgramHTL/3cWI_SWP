@@ -18,6 +18,6 @@ public class While_Ex_1 {
             }
         }
         System.out.println(sum);
-
+        //Summe
     }
 }
