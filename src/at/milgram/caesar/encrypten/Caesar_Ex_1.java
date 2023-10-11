@@ -1,8 +1,12 @@
 package at.milgram.caesar.encrypten;
 
+import java.util.Scanner;
+
 public class Caesar_Ex_1 {
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        String word = "Hello world";
+        System.out.println("Type in a word, you want to encrypt: ");
+        String word = scanner.nextLine();
         System.out.println("Normal word: " + word);
         String encryptedWord = encrypt(word, 2);
         System.out.println("Encrypted word: " + encryptedWord);
