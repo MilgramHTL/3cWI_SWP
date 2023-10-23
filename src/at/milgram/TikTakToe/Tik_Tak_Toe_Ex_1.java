@@ -1,6 +1,5 @@
 package at.milgram.TikTakToe;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Tik_Tak_Toe_Ex_1 {
@@ -9,51 +8,34 @@ public class Tik_Tak_Toe_Ex_1 {
     static char currentPlayer;
 
     static char checkWin() {
-        for (int a = 0; a < 8; a++) {
-            char line = ' ';
-
-            switch (a) {
-                case 0:
-                    line = charArray[0][0];
-                    break;
-                case 1:
-                    line = charArray[0][1];
-                    break;
-                case 2:
-                    line = charArray[0][2];
-                    break;
-                case 3:
-                    line = charArray[0][0];
-                    break;
-                case 4:
-                    line = charArray[1][1];
-                    break;
-                case 5:
-                    line = charArray[2][2];
-                    break;
-                case 6:
-                    line = charArray[2][0];
-                    break;
-                case 7:
-                    line = charArray[2][2];
-                    break;
+        for (int a = 0; a < 3; a++) {
+            // Check rows
+            if (charArray[a][0] == charArray[a][1] && charArray[a][1] == charArray[a][2] && charArray[a][0] != ' ') {
+                return charArray[a][0];
             }
-            if (line == 'X') {
-                return 'X';
-            } else if (line == 'O') {
-                return 'O';
+            // Check columns
+            if (charArray[0][a] == charArray[1][a] && charArray[1][a] == charArray[2][a] && charArray[0][a] != ' ') {
+                return charArray[0][a];
             }
         }
 
-        for (int a = 0; a < 9; a++) {
-            if (charArray[a / 3][a % 3] != 'X' && charArray[a / 3][a % 3] != 'O') {
-                break;
-            } else if (a == 8) {
-                return 'D';
+        // Check diagonals
+        if (charArray[0][0] == charArray[1][1] && charArray[1][1] == charArray[2][2] && charArray[0][0] != ' ') {
+            return charArray[0][0];
+        }
+        if (charArray[0][2] == charArray[1][1] && charArray[1][1] == charArray[2][0] && charArray[0][2] != ' ') {
+            return charArray[0][2];
+        }
+
+        for (int a = 0; a < 3; a++) {
+            for (int b = 0; b < 3; b++) {
+                if (charArray[a][b] == ' ') {
+                    return ' ';
+                }
             }
         }
 
-        return ' ';
+        return 'D';
     }
 
     static void printBoard() {
@@ -91,11 +73,11 @@ public class Tik_Tak_Toe_Ex_1 {
                 rowInput = in.nextInt();
                 colInput = in.nextInt();
                 if (!(rowInput >= 0 && rowInput < 3 && colInput >= 0 && colInput < 3)) {
-                    System.out.println("Invalid input");
+                    System.out.println("Invalid input. Please enter row and column in the range 0-2.");
                     continue;
                 }
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid input");
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter row and column as integers.");
                 in.next();
                 continue;
             }
@@ -107,7 +89,7 @@ public class Tik_Tak_Toe_Ex_1 {
                 printBoard();
                 winner = checkWin();
             } else {
-                System.out.println("Slot already taken");
+                System.out.println("Slot already taken. Try again.");
             }
         }
 
