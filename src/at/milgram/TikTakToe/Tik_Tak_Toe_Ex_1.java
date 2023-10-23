@@ -9,17 +9,17 @@ public class Tik_Tak_Toe_Ex_1 {
 
     static char checkWin() {
         for (int a = 0; a < 3; a++) {
-            // Check rows
+
             if (charArray[a][0] == charArray[a][1] && charArray[a][1] == charArray[a][2] && charArray[a][0] != ' ') {
                 return charArray[a][0];
             }
-            // Check columns
+
             if (charArray[0][a] == charArray[1][a] && charArray[1][a] == charArray[2][a] && charArray[0][a] != ' ') {
                 return charArray[0][a];
             }
         }
 
-        // Check diagonals
+
         if (charArray[0][0] == charArray[1][1] && charArray[1][1] == charArray[2][2] && charArray[0][0] != ' ') {
             return charArray[0][0];
         }
