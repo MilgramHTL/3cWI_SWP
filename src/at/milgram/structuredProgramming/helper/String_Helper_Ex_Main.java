@@ -1,4 +1,4 @@
-package at.milgram.string.helper;
+package at.milgram.structuredProgramming.helper;
 
 import java.util.Scanner;
 

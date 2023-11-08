@@ -1,4 +1,4 @@
-package at.milgram.caesar.encrypten;
+package at.milgram.structuredProgramming.encrypten;
 
 import java.util.Scanner;
 

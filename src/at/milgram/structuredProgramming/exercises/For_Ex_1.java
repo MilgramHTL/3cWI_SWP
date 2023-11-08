@@ -1,6 +1,4 @@
-package at.milgram.exercises;
-
-import java.util.Random;
+package at.milgram.structuredProgramming.exercises;
 
 public class For_Ex_1 {
     public static void main(String[] args) {

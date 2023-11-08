@@ -1,4 +1,4 @@
-package at.milgram.ATM;
+package at.milgram.structuredProgramming.ATM;
 
 import java.util.Scanner;
 

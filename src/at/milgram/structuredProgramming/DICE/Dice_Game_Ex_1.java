@@ -1,4 +1,4 @@
-package at.milgram.DICE;
+package at.milgram.structuredProgramming.DICE;
 
 import java.util.Random;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package at.milgram.TikTakToe;
+package at.milgram.structuredProgramming.TikTakToe;
 
 import java.util.Scanner;
 

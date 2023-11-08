@@ -1,4 +1,4 @@
-package at.milgram.word.guesser;
+package at.milgram.structuredProgramming.guesser;
 
 import java.util.Random;
 import java.util.Scanner;

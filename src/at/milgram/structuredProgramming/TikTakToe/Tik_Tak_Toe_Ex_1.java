@@ -1,35 +1,35 @@
-package at.milgram.TikTakToe;
+package at.milgram.structuredProgramming.TikTakToe;
 
 import java.util.Scanner;
 
 public class Tik_Tak_Toe_Ex_1 {
 
-    static char[][] charArray;
+    static char[][] field;
     static char currentPlayer;
 
     static char checkWin() {
         for (int a = 0; a < 3; a++) {
 
-            if (charArray[a][0] == charArray[a][1] && charArray[a][1] == charArray[a][2] && charArray[a][0] != ' ') {
-                return charArray[a][0];
+            if (field[a][0] == field[a][1] && field[a][1] == field[a][2] && field[a][0] != ' ') {
+                return field[a][0];
             }
 
-            if (charArray[0][a] == charArray[1][a] && charArray[1][a] == charArray[2][a] && charArray[0][a] != ' ') {
-                return charArray[0][a];
+            if (field[0][a] == field[1][a] && field[1][a] == field[2][a] && field[0][a] != ' ') {
+                return field[0][a];
             }
         }
 
 
-        if (charArray[0][0] == charArray[1][1] && charArray[1][1] == charArray[2][2] && charArray[0][0] != ' ') {
-            return charArray[0][0];
+        if (field[0][0] == field[1][1] && field[1][1] == field[2][2] && field[0][0] != ' ') {
+            return field[0][0];
         }
-        if (charArray[0][2] == charArray[1][1] && charArray[1][1] == charArray[2][0] && charArray[0][2] != ' ') {
-            return charArray[0][2];
+        if (field[0][2] == field[1][1] && field[1][1] == field[2][0] && field[0][2] != ' ') {
+            return field[0][2];
         }
 
         for (int a = 0; a < 3; a++) {
             for (int b = 0; b < 3; b++) {
-                if (charArray[a][b] == ' ') {
+                if (field[a][b] == ' ') {
                     return ' ';
                 }
             }
@@ -43,7 +43,7 @@ public class Tik_Tak_Toe_Ex_1 {
         for (int row = 0; row < 3; row++) {
             System.out.print("| ");
             for (int split = 0; split < 3; split++) {
-                System.out.print(charArray[row][split] + " | ");
+                System.out.print(field[row][split] + " | ");
             }
             System.out.println("\n-------------");
         }
@@ -51,13 +51,13 @@ public class Tik_Tak_Toe_Ex_1 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        charArray = new char[3][3];
+        field = new char[3][3];
         currentPlayer = 'X';
         char winner = ' ';
 
         for (int row = 0; row < 3; row++) {
             for (int split = 0; split < 3; split++) {
-                charArray[row][split] = ' ';
+                field[row][split] = ' ';
             }
         }
 
@@ -82,8 +82,8 @@ public class Tik_Tak_Toe_Ex_1 {
                 continue;
             }
 
-            if (charArray[rowInput][colInput] == ' ') {
-                charArray[rowInput][colInput] = currentPlayer;
+            if (field[rowInput][colInput] == ' ') {
+                field[rowInput][colInput] = currentPlayer;
                 currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
 
                 printBoard();

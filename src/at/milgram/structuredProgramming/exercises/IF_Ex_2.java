@@ -1,4 +1,4 @@
-package at.milgram.exercises;
+package at.milgram.structuredProgramming.exercises;
 
 import java.util.Random;
 
