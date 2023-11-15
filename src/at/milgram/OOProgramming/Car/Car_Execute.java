@@ -15,9 +15,15 @@ public class Car_Execute {
         c2.serialNumber = "A5";
 
         c1.driveCar(c1.color, c1.fuel, c1.fuelConsumption, c1.serialNumber);
+        c1.turboBoost();
+        c1.honk();
         c1.brakeCar();
+        c1.getRemainingRange();
 
         c2.driveCar(c2.color, c2.fuel, c2.fuelConsumption, c2.serialNumber);
+        c2.turboBoost();
+        c2.honk();
         c2.brakeCar();
+        c2.getRemainingRange();
     }
 }
