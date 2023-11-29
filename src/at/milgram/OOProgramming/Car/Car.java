@@ -3,16 +3,16 @@ package at.milgram.OOProgramming.Car;
 import java.util.Scanner;
 
 public class Car {
-    public String color;
-    public double fuel;
-    public double fuelConsumption;
-    public String serialNumber;
-    public double distance;
-    public double remainingDistance;
-    public double fuelUsed;
-    public Scanner scanner;
-    public int amountOfRepetitions;
-    public double fuelCheck;
+    private String color;
+    private double fuel;
+    private double fuelConsumption;
+    private String serialNumber;
+    private double distance;
+    private double remainingDistance;
+    private double fuelUsed;
+    private Scanner scanner;
+    private int amountOfRepetitions;
+    private double fuelCheck;
     public Car(String color, double fuel, double fuelConsumption, String serialNumber) {
         this.color = color;
         this.fuel = fuel;
@@ -24,8 +24,9 @@ public class Car {
 
     public void driveCar() {
         System.out.println("Das Auto mit der Farbe " + this.color + ", Seriennummer " + this.serialNumber + " fährt.");
-
-        this.distance = 90.0;
+        System.out.println("Wie weit soll das Auto fahren: ");
+        Scanner scanner = new Scanner(System.in);
+        this.distance = scanner.nextDouble();
         this.fuelUsed = this.distance / this.fuelConsumption;
         this.fuel -= this.fuelUsed;
 
@@ -66,4 +67,84 @@ public class Car {
         System.out.println("Das Auto bremst.");
     }
 
+    public void setAmountOfRepetitions(int amountOfRepetitions) {
+        this.amountOfRepetitions = amountOfRepetitions;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setDistance(double distance) {
+        if (distance > 90){
+            this.distance = 90;
+        } else{
+            this.distance = distance;
+        }
+    }
+
+    public void setFuel(double fuel) {
+        this.fuel = fuel;
+    }
+
+    public void setFuelConsumption(double fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public void setFuelCheck(double fuelCheck) {
+        this.fuelCheck = fuelCheck;
+    }
+
+    public void setFuelUsed(double fuelUsed) {
+        this.fuelUsed = fuelUsed;
+    }
+
+    public void setRemainingDistance(double remainingDistance) {
+        this.remainingDistance = remainingDistance;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public double getFuel() {
+        return fuel;
+    }
+
+    public double getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public double getRemainingDistance() {
+        return remainingDistance;
+    }
+
+    public double getFuelUsed() {
+        return fuelUsed;
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public int getAmountOfRepetitions() {
+        return amountOfRepetitions;
+    }
+
+    public double getFuelCheck() {
+        return fuelCheck;
+    }
 }
+
