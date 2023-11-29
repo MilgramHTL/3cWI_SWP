@@ -2,6 +2,7 @@ package at.milgram.OOProgramming.Car;
 
 import java.util.Scanner;
 
+
 public class Car {
     private String color;
     private double fuel;
@@ -13,7 +14,9 @@ public class Car {
     private Scanner scanner;
     private int amountOfRepetitions;
     private double fuelCheck;
-    public Car(String color, double fuel, double fuelConsumption, String serialNumber) {
+    private Engine engine;
+    public Car(Engine engine, String color, double fuel, double fuelConsumption, String serialNumber) {
+        this.engine = engine;
         this.color = color;
         this.fuel = fuel;
         this.fuelConsumption = fuelConsumption;
@@ -23,7 +26,7 @@ public class Car {
 
 
     public void driveCar() {
-        System.out.println("Das Auto mit der Farbe " + this.color + ", Seriennummer " + this.serialNumber + " fährt.");
+        System.out.println("Das Auto mit der Farbe " + this.color + ", Seriennummer " + this.serialNumber + " und PS von " + this.getEngine().getHorsePower() + " fährt.");
         System.out.println("Wie weit soll das Auto fahren: ");
         Scanner scanner = new Scanner(System.in);
         this.distance = scanner.nextDouble();
@@ -145,6 +148,14 @@ public class Car {
 
     public double getFuelCheck() {
         return fuelCheck;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 }
 

@@ -2,9 +2,10 @@ package at.milgram.OOProgramming.Car;
 
 public class Car_Execute {
     public static void main(String[] args) {
-        Car c1 = new Car("red", 69, 3, "R8");
-        Car c2 = new Car("blue", 64, 2, "A5");
-        Car c3 = new Car("purple", 99, 33, "SS9");
+        Engine engine = new Engine(100, Engine.TYPE.Diesel);
+        Car c1 = new Car(engine,"red", 69, 3, "R8");
+        Car c2 = new Car(engine,"blue", 64, 2, "A5");
+        Car c3 = new Car(engine,"purple", 99, 33, "SS9");
 
         c1.driveCar();
         c1.turboBoost();
@@ -12,6 +13,9 @@ public class Car_Execute {
         c1.brakeCar();
         c1.getRemainingRange();
         c1.checkFuel();
+
+        System.out.print("Die PS vom Auto 1 beträgt: ");
+        System.out.println(c1.getEngine().getHorsePower());
 
         System.out.println(c1.getColor());
         c1.setColor("green");
