@@ -11,7 +11,7 @@ public class Tank {
         this.fuelConsumption = fuelConsumption;
         this.material = material;
 
-        this.fuelUsed =
+        this.fuelUsed = 30;
     }
 
     public double getCapacity() {
