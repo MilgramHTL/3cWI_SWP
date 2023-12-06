@@ -4,11 +4,14 @@ public class Tank {
     private double capacity;
     private double fuelConsumption;
     private String material;
+    private double fuelUsed;
 
     public Tank(double capacity, double fuelConsumption, String material) {
         this.capacity = capacity;
         this.fuelConsumption = fuelConsumption;
         this.material = material;
+
+        this.fuelUsed =
     }
 
     public double getCapacity() {

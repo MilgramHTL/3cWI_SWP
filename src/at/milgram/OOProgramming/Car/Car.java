@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Car {
     private String color;
     private double fuel;
-    private double fuelConsumption;
     private String serialNumber;
     private double distance;
     private double remainingDistance;
@@ -15,11 +14,12 @@ public class Car {
     private int amountOfRepetitions;
     private double fuelCheck;
     private Engine engine;
+    private Tank fuelConsumption;
     public Car(Engine engine, String color, double fuel, double fuelConsumption, String serialNumber) {
         this.engine = engine;
         this.color = color;
         this.fuel = fuel;
-        this.fuelConsumption = fuelConsumption;
+        getFuelConsumption();
         this.serialNumber = serialNumber;
         this.distance = 0.0;
     }
@@ -118,7 +118,7 @@ public class Car {
         return fuel;
     }
 
-    public double getFuelConsumption() {
+    public Tank getFuelConsumption() {
         return fuelConsumption;
     }
 

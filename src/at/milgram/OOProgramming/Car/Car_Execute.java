@@ -7,6 +7,7 @@ public class Car_Execute {
         Car c2 = new Car(engine,"blue", 64, 2, "A5");
         Car c3 = new Car(engine,"purple", 99, 33, "SS9");
 
+        engine.drive();
         c1.driveCar();
         c1.turboBoost();
         c1.honk();
