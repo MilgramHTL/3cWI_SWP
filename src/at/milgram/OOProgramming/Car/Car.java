@@ -9,33 +9,18 @@ public class Car {
     private String serialNumber;
     private double distance;
     private double remainingDistance;
-    private double fuelUsed;
     private Scanner scanner;
     private int amountOfRepetitions;
     private double fuelCheck;
     private Engine engine;
-    private Tank fuelConsumption;
-    public Car(Engine engine, String color, double fuel, double fuelConsumption, String serialNumber) {
+    public Car(Engine engine, String color, double fuel, String serialNumber) {
         this.engine = engine;
         this.color = color;
         this.fuel = fuel;
-        getFuelConsumption();
         this.serialNumber = serialNumber;
         this.distance = 0.0;
     }
 
-
-    public void driveCar() {
-        System.out.println("Das Auto mit der Farbe " + this.color + ", Seriennummer " + this.serialNumber + " und PS von " + this.getEngine().getHorsePower() + " fährt.");
-        System.out.println("Wie weit soll das Auto fahren: ");
-        Scanner scanner = new Scanner(System.in);
-        this.distance = scanner.nextDouble();
-        this.fuelUsed = this.distance / this.fuelConsumption;
-        this.fuel -= this.fuelUsed;
-
-        System.out.println("Treibstoffverbrauch: " + this.fuelUsed + " Liter");
-        System.out.println("Verbleibender Kraftstoff: " + this.fuel + " Liter");
-    }
     public void turboBoost(){
         double boostFuel = 4;
         if (this.fuel >= boostFuel) {
@@ -54,10 +39,7 @@ public class Car {
             System.out.println("Tuuuuuuut");
         }
     }
-    public void getRemainingRange(){
-        this.remainingDistance = this.fuel/this.fuelConsumption;
-        System.out.println("Das Fahrzeug könnte noch: " + this.remainingDistance + " fahren.");
-    }
+
     public void checkFuel(){
         this.fuelCheck = this.fuel;
         if(this.fuelCheck > 0){
@@ -86,22 +68,6 @@ public class Car {
         }
     }
 
-    public void setFuel(double fuel) {
-        this.fuel = fuel;
-    }
-
-    public void setFuelConsumption(double fuelConsumption) {
-        this.fuelConsumption = fuelConsumption;
-    }
-
-    public void setFuelCheck(double fuelCheck) {
-        this.fuelCheck = fuelCheck;
-    }
-
-    public void setFuelUsed(double fuelUsed) {
-        this.fuelUsed = fuelUsed;
-    }
-
     public void setRemainingDistance(double remainingDistance) {
         this.remainingDistance = remainingDistance;
     }
@@ -118,9 +84,6 @@ public class Car {
         return fuel;
     }
 
-    public Tank getFuelConsumption() {
-        return fuelConsumption;
-    }
 
     public String getSerialNumber() {
         return serialNumber;
@@ -132,10 +95,6 @@ public class Car {
 
     public double getRemainingDistance() {
         return remainingDistance;
-    }
-
-    public double getFuelUsed() {
-        return fuelUsed;
     }
 
     public Scanner getScanner() {

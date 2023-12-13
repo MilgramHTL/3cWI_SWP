@@ -2,17 +2,19 @@ package at.milgram.OOProgramming.Car;
 
 public class Car_Execute {
     public static void main(String[] args) {
+        Tank tank = new Tank(200, 2, "Titan");
         Engine engine = new Engine(100, Engine.TYPE.Diesel);
-        Car c1 = new Car(engine,"red", 69, 3, "R8");
-        Car c2 = new Car(engine,"blue", 64, 2, "A5");
-        Car c3 = new Car(engine,"purple", 99, 33, "SS9");
+        Car c1 = new Car(engine,"red", 69,  "R8");
+        Car c2 = new Car(engine,"blue", 64,  "A5");
+        Car c3 = new Car(engine,"purple", 99,  "SS9");
 
-        engine.drive();
-        c1.driveCar();
+        tank.getRemainingRange();
+        engine.drive(17);
+        engine.driveCar(3000);
         c1.turboBoost();
         c1.honk();
         c1.brakeCar();
-        c1.getRemainingRange();
+        // c1.getRemainingRange();
         c1.checkFuel();
 
         System.out.print("Die PS vom Auto 1 beträgt: ");
@@ -24,20 +26,18 @@ public class Car_Execute {
 
         System.out.println(" ");
 
-        c2.driveCar();
+
         c2.turboBoost();
         c2.honk();
         c2.brakeCar();
-        c2.getRemainingRange();
         c2.checkFuel();
 
         System.out.println(" ");
 
-        c3.driveCar();
+
         c3.turboBoost();
         c3.honk();
         c3.brakeCar();
-        c3.getRemainingRange();
         c3.checkFuel();
     }
 }
