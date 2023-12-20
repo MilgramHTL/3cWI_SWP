@@ -2,18 +2,13 @@ package at.milgram.OOProgramming.Car;
 
 public class Tank {
     private double capacity;
-
     private String material;
-
-
     private double fuelAmount;
-
 
     public Tank(double capacity, double fuelConsumption, String material) {
         this.capacity = capacity;
         this.fuelAmount = capacity;
         this.material = material;
-
     }
 
 

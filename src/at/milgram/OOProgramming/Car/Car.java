@@ -12,9 +12,9 @@ public class Car {
     private Scanner scanner;
     private int amountOfRepetitions;
     private boolean isInTurboBoostMode = false;
-    private double fuelCheck;
-    private double boostFuel;
     private Engine engine;
+
+    public static final int BOOST_FUEL_AMOUNT = 40;
 
     public Car(Engine engine, String color, double fuel, String serialNumber) {
         this.engine = engine;
@@ -24,39 +24,39 @@ public class Car {
         this.distance = 0.0;
     }
 
-    public void drive(int amount){
-
-        this.engine.drive(amount);
+    public void drive(int amount, int speed){
+        if (isInTurboBoostMode){
+            this.engine.drive(amount + BOOST_FUEL_AMOUNT,60);
+        } else {
+            this.engine.drive(amount, speed);
+        }
     }
 
-    public void turnOffTurboBoost(){
-        this.isInTurboBoostMode=false;
-    }
 
     public void setTurboBoost(){
-        int boostFuel = 40;
-        if (this.getEngine().getTank().getFuelAmount() >= boostFuel) {
+
+        if (this.getEngine().getTank().getFuelAmount() >= BOOST_FUEL_AMOUNT) {
             this.isInTurboBoostMode = true;
             System.out.println("SuperBoost-Modus");
-            System.out.println("Treibstoff nach Benutzung des SuperBoost-Modus: " + this.fuel + " Liter");
+            System.out.println("Treibstoff nach Benutzung des SuperBoost-Modus: " + this.getEngine().getTank().getFuelAmount() + " Liter");
         } else {
             this.isInTurboBoostMode = false;
             System.out.println("Not enough fuel to use Superboost");
         }
     }
-    /* public void honk(){
+    public void honk(){
         System.out.println("Anzahl der Huper: ");
         this.scanner = new Scanner(System.in);
         this.amountOfRepetitions = Integer.parseInt(this.scanner.next());
         for(int i = 0; i < this.amountOfRepetitions; i++) {
             System.out.println("Tuuuuuuut");
         }
-    } */
+    }
 
 
     public void checkFuel(){
         if(this.getEngine().getTank().getFuelAmount() > 0){
-            System.out.println("Das Auto hat noch Treibsstoff.");
+            System.out.println("Das Auto hat noch Treibsstoff: " + this.getEngine().getTank().getFuelAmount());
         }else {
             System.out.println("Das Auto hat keinen Treibstoff mehr.");
         }
@@ -118,9 +118,7 @@ public class Car {
         return amountOfRepetitions;
     }
 
-    public double getFuelCheck() {
-        return fuelCheck;
-    }
+
 
     public Engine getEngine() {
         return engine;

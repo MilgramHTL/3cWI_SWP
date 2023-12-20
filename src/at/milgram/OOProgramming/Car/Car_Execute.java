@@ -14,13 +14,14 @@ public class Car_Execute {
         Car c2 = new Car(engine2,  "blue", 64,  "A5");
         Car c3 = new Car(engine3,  "purple", 99,  "SS9");
 
-        System.out.println(tank1.getFuelAmount());
-
-        c1.drive(17);
-
+        c1.drive(17, 60);
         c1.setTurboBoost();
-        //c1.honk();
-        c1.brakeCar();
+        System.out.println(c1.getEngine().getTank().getFuelAmount());
+        c1.drive(17, 60);
+
+
+        System.out.println(c1.getEngine().getTank().getFuelAmount());
+        c1.honk();
         c1.checkFuel();
 
         System.out.print("Die PS vom Auto 1 beträgt: ");
@@ -30,6 +31,8 @@ public class Car_Execute {
         c1.setColor("green");
         System.out.println(c1.getColor());
 
+        c1.brakeCar();
+       /*
         System.out.println(" ");
 
         c2.setTurboBoost();
@@ -43,5 +46,7 @@ public class Car_Execute {
         //c3.honk();
         c3.brakeCar();
         c3.checkFuel();
+
+        */
     }
 }
