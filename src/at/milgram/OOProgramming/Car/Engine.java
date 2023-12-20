@@ -10,9 +10,10 @@ public class Engine {
     private TYPE gasType;
     private Tank tank;
 
-    public Engine(int horsePower, TYPE gasType) {
+    public Engine(int horsePower, TYPE gasType, Tank tank) {
         this.horsePower = horsePower;
         this.gasType = gasType;
+        this.tank = tank;
     }
     public void driveCar(double distance) {
         double fuelUsed = distance / tank.getFuelConsumption();

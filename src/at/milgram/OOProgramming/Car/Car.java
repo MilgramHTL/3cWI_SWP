@@ -40,6 +40,11 @@ public class Car {
         }
     }
 
+    public void drive(int amount){
+
+        this.engine.drive(amount);
+    }
+
     public void checkFuel(){
         this.fuelCheck = this.fuel;
         if(this.fuelCheck > 0){

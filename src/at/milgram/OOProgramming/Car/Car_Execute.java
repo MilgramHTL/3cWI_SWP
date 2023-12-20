@@ -6,13 +6,13 @@ public class Car_Execute {
         Tank tank2 = new Tank(300, 3, "Wolfram");
         Tank tank3 = new Tank(400, 4, "Eisen");
 
-        Engine engine1 = new Engine(100, Engine.TYPE.Diesel);
-        Engine engine2 = new Engine(100, Engine.TYPE.Diesel);
-        Engine engine3 = new Engine(100, Engine.TYPE.Diesel);
+        Engine engine1 = new Engine(100, Engine.TYPE.Diesel, tank1);
+        Engine engine2 = new Engine(100, Engine.TYPE.Diesel, tank2 );
+        Engine engine3 = new Engine(100, Engine.TYPE.Diesel, tank3);
 
-        Car c1 = new Car(engine1, tank1, "red", 69,  "R8");
-        Car c2 = new Car(engine2, tank2, "blue", 64,  "A5");
-        Car c3 = new Car(engine3, tank3, "purple", 99,  "SS9");
+        Car c1 = new Car(engine1,  "red", 69,  "R8");
+        Car c2 = new Car(engine2,  "blue", 64,  "A5");
+        Car c3 = new Car(engine3,  "purple", 99,  "SS9");
 
         tank1.getRemainingRange();
         engine1.drive(17);
@@ -20,7 +20,6 @@ public class Car_Execute {
         c1.turboBoost();
         c1.honk();
         c1.brakeCar();
-        c1.getRemainingRange();
         c1.checkFuel();
 
         System.out.print("Die PS vom Auto 1 beträgt: ");
