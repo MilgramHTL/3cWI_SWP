@@ -14,11 +14,12 @@ public class Car_Execute {
         Car c2 = new Car(engine2,  "blue", 64,  "A5");
         Car c3 = new Car(engine3,  "purple", 99,  "SS9");
 
-        tank1.getRemainingRange();
-        engine1.drive(17);
-        engine1.driveCar(3000);
-        c1.turboBoost();
-        c1.honk();
+        System.out.println(tank1.getFuelAmount());
+
+        c1.drive(17);
+
+        c1.setTurboBoost();
+        //c1.honk();
         c1.brakeCar();
         c1.checkFuel();
 
@@ -31,15 +32,15 @@ public class Car_Execute {
 
         System.out.println(" ");
 
-        c2.turboBoost();
-        c2.honk();
+        c2.setTurboBoost();
+        //c2.honk();
         c2.brakeCar();
         c2.checkFuel();
 
         System.out.println(" ");
 
-        c3.turboBoost();
-        c3.honk();
+        c3.setTurboBoost();
+        //c3.honk();
         c3.brakeCar();
         c3.checkFuel();
     }

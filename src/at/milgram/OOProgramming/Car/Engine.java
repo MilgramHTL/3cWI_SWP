@@ -10,23 +10,18 @@ public class Engine {
     private TYPE gasType;
     private Tank tank;
 
+    private int fuelConsumption;
+
     public Engine(int horsePower, TYPE gasType, Tank tank) {
         this.horsePower = horsePower;
         this.gasType = gasType;
         this.tank = tank;
     }
-    public void driveCar(double distance) {
-        double fuelUsed = distance / tank.getFuelConsumption();
-        tank.setFuelConsumption(tank.getFuelConsumption());
-        tank.setFuelUsed(fuelUsed);
-        tank.setFuel(tank.getFuel() - fuelUsed);
-
-        System.out.println("Treibstoffverbrauch: " + fuelUsed + " Liter");
-        System.out.println("Verbleibender Kraftstoff: " + tank.getFuel() + " Liter");
-    }
 
     public void drive(int amount){
-        System.out.println("the motor is running with " + amount);
+        System.out.println("The motor is running with " + this.tank.getFuelAmount());
+        this.tank.setFuelAmount(this.tank.getFuelAmount()-amount);
+        System.out.println("The motor is running with " + this.tank.getFuelAmount());
     }
 
     public int getHorsePower() {
@@ -37,4 +32,13 @@ public class Engine {
         return gasType;
     }
 
+
+
+    public Tank getTank() {
+        return tank;
+    }
+
+    public void setTank(Tank tank) {
+        this.tank = tank;
+    }
 }
