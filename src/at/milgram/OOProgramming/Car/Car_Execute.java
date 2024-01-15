@@ -10,9 +10,19 @@ public class Car_Execute {
         Engine engine2 = new Engine(100, Engine.TYPE.Diesel, tank2 );
         Engine engine3 = new Engine(100, Engine.TYPE.Diesel, tank3);
 
+        RearMirror r1 = new RearMirror(100, 10);
+        RearMirror r2 = new RearMirror(90, -30);
+
         Car c1 = new Car(engine1,  "red", 69,  "R8");
         Car c2 = new Car(engine2,  "blue", 64,  "A5");
         Car c3 = new Car(engine3,  "purple", 99,  "SS9");
+
+        c1.addMirror(r1);
+        c1.addMirror(r2);
+
+        for (RearMirror mirror:c1.getMirrors()) {
+            System.out.println(mirror.getPosition());
+        }
 
         c1.drive(17, 60);
         c1.setTurboBoost();

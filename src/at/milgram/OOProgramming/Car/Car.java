@@ -1,10 +1,13 @@
 package at.milgram.OOProgramming.Car;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class Car {
     private String color;
+    private List<RearMirror> mirrors;
     private double fuel;
     private String serialNumber;
     private double distance;
@@ -22,6 +25,7 @@ public class Car {
         this.fuel = fuel;
         this.serialNumber = serialNumber;
         this.distance = 0.0;
+        this.mirrors = new ArrayList<>();
     }
 
     public void drive(int amount, int speed){
@@ -32,6 +36,17 @@ public class Car {
         }
     }
 
+    public void addMirror(RearMirror rearMirror){
+        this.mirrors.add(rearMirror);
+    }
+
+    public List<RearMirror> getMirrors() {
+        return mirrors;
+    }
+
+    public void setMirrors(List<RearMirror> mirrors) {
+        this.mirrors = mirrors;
+    }
 
     public void setTurboBoost(){
 
