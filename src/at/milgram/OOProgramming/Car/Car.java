@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Car {
     private String color;
     private List<RearMirror> mirrors;
+    private List<Wheels> wheels;
     private double fuel;
     private String serialNumber;
     private double distance;
@@ -26,6 +27,7 @@ public class Car {
         this.serialNumber = serialNumber;
         this.distance = 0.0;
         this.mirrors = new ArrayList<>();
+        this.wheels = new ArrayList<>();
     }
 
     public void drive(int amount, int speed){
@@ -43,10 +45,17 @@ public class Car {
     public List<RearMirror> getMirrors() {
         return mirrors;
     }
+    public void addWheels(Wheels wheels) {
+        this.wheels.add(wheels);
+    }
+    public List<Wheels> getWheels(){
+        return wheels;
+    }
 
     public void setMirrors(List<RearMirror> mirrors) {
         this.mirrors = mirrors;
     }
+    public void setWheels(List<Wheels> wheels) {this.wheels = wheels;}
 
     public void setTurboBoost(){
 

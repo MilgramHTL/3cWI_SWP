@@ -13,6 +13,11 @@ public class Car_Execute {
         RearMirror r1 = new RearMirror(100, 10);
         RearMirror r2 = new RearMirror(90, -30);
 
+        Wheels w1 = new Wheels(10, 7, "right front");
+        Wheels w2 = new Wheels(20, 8, "right back");
+        Wheels w3 = new Wheels(10,7,"left front");
+        Wheels w4 = new Wheels(20,8,"right back");
+
         Car c1 = new Car(engine1,  "red", 69,  "R8");
         Car c2 = new Car(engine2,  "blue", 64,  "A5");
         Car c3 = new Car(engine3,  "purple", 99,  "SS9");
@@ -20,7 +25,13 @@ public class Car_Execute {
         c1.addMirror(r1);
         c1.addMirror(r2);
 
+        c1.addWheels(w1);
+        c1.addWheels(w2);
+        c1.addWheels(w3);
+        c1.addWheels(w4);
+
         for (RearMirror mirror:c1.getMirrors()) {
+            System.out.println(mirror.getSize());
             System.out.println(mirror.getPosition());
         }
 
