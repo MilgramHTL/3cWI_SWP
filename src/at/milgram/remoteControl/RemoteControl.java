@@ -1,4 +1,4 @@
-package at.milgram.remoteControll;
+package at.milgram.remoteControl;
 
 public class RemoteControl {
     private int status;

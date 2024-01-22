@@ -1,4 +1,4 @@
-package at.milgram.remoteControll;
+package at.milgram.remoteControl;
 
 public class Battery {
     public enum Size {D, C, AA, AAA, A23, PP3}
