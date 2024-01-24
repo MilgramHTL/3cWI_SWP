@@ -1,13 +1,23 @@
 package at.milgram.remoteControl;
 
 public class RemoteControl {
-    private int status;
+
+    private Battery battery;
+
+    public RemoteControl(Battery battery) {
+        this.battery = battery;
+    }
+
     public void getStatus(){
-        System.out.println(this.status);
+        System.out.println("Aktueller Kapazitäts Stand: " + this.battery.getCapacity());
     }
 
     public void turnOn(){
-        this.status =  - 5;
+        System.out.println("Verbraucher angeschlossen");
+        double currentCapacity = this.battery.getCapacity();
+        double fivePercent = 0.05;
+        double amountToSubtract = currentCapacity * fivePercent;
+        this.battery.setCapacity(currentCapacity - amountToSubtract);
     }
 
     public void turnOff(){
