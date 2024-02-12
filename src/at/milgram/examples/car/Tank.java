@@ -8,4 +8,20 @@ public class Tank {
         this.fuel = fuel;
         this.fuelConsumption = fuelConsumption;
     }
+
+    public double getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(double fuel) {
+        this.fuel = fuel;
+    }
+
+    public double getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public void setFuelConsumption(double fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
 }
