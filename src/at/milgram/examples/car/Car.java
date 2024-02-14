@@ -3,9 +3,13 @@ package at.milgram.examples.car;
 public class Car {
     private String color;
     private double basePrice;
+    private Engine engine;
+    private Tank tank;
 
 
-    public Car(String color, double basePrice){
+    public Car(Engine engine, Tank tank, String color, double basePrice){
+        this.engine = engine;
+        this.tank = tank;
         this.color = color;
         this.basePrice = basePrice;
     }
