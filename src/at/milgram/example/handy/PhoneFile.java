@@ -11,33 +11,11 @@ public class PhoneFile {
         this.name = name;
     }
 
-    public void getInfo(){
-        System.out.println(getExtension());
-        System.out.println(getSize());
-        System.out.println(getName());
+    public String[] getInfo(){
+        return new String[]{name, String.valueOf(size), extension};
     }
-
-    public String getExtension() {
-        return extension;
-    }
-
-    public void setExtension(String extension) {
-        this.extension = extension;
-    }
-
     public double getSize() {
         return size;
     }
 
-    public void setSize(double size) {
-        this.size = size;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
