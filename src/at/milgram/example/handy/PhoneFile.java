@@ -17,5 +17,4 @@ public class PhoneFile {
     public double getSize() {
         return size;
     }
-
 }

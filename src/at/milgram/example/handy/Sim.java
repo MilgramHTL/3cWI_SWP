@@ -4,7 +4,7 @@ public class Sim {
     private int id;
     private String number;
 
-    public void SimCard(int id, String number){
+    public Sim(int id, String number){
         this.id = id;
         this.number = number;
     }
