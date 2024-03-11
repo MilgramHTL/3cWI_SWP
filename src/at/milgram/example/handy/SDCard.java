@@ -20,12 +20,12 @@ public class SDCard {
         }
     }
 
-    public void getFreeSpace() {
+    public double getFreeSpace() {
         double sum = 0;
         for (PhoneFile file : file) {
             sum += file.getSize();
         }
-        System.out.println(capacity - sum);
+        return capacity - sum;
     }
 
     public ArrayList<PhoneFile> getAllFiles() {
