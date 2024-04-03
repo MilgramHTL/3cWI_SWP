@@ -5,18 +5,18 @@ import java.util.List;
 
 public class SDCard {
     private double capacity;
-    private List<CameraFiles> cameraFiles;
+    private List<CameraFile> cameraFiles;
 
     public SDCard(double capacity) {
         this.capacity = capacity;
         this.cameraFiles = new ArrayList<>();
     }
 
-    public void saveFile(CameraFiles cameraFiles){
+    public void saveFile(CameraFile cameraFiles){
         this.cameraFiles.add(cameraFiles);
     }
 
-    public List<CameraFiles> getCameraFiles() {
+    public List<CameraFile> getCameraFiles() {
         return cameraFiles;
     }
 }

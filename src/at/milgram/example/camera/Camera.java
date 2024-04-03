@@ -1,6 +1,5 @@
 package at.milgram.example.camera;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Camera {
@@ -21,18 +20,28 @@ public class Camera {
         this.manufacturer = null;
         this.lens = null;
     }
-    public void addSDCard(SDCard card){
+
+    public void addSDCard(SDCard card) {
         this.card = card;
     }
-    public void addManufacturer(Manufacturer manufacturer){
+
+    public void addManufacturer(Manufacturer manufacturer) {
         this.manufacturer = manufacturer;
     }
-    public void addLens(Lens lens){
+
+    public void addLens(Lens lens) {
         this.lens = lens;
     }
 
-    public void takePicture(String name, String date, double size){
-        CameraFiles cF = new CameraFiles(name, date, size);
+    public void takePicture(String name, String date, double size) {
+        CameraFile cF = new CameraFile(name, date, size);
         this.card.saveFile(cF);
+    }
+
+    public void printFiles() {
+        List<CameraFile> files = card.getCameraFiles();
+        for (CameraFile file : files) {
+            System.out.println(file.getName() + " : " + file.getSize());
+        }
     }
 }

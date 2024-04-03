@@ -1,5 +1,7 @@
 package at.milgram.example.camera;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Manufacturer m1 = new Manufacturer("Hubert", "Austria");
@@ -13,6 +15,6 @@ public class Main {
         camera.addLens(lens);
         camera.takePicture("bär", "10.12.2023", 20);
         camera.takePicture("fisch", "20.08.2020", 10);
-        card.getCameraFiles();
+        camera.printFiles();
     }
 }
